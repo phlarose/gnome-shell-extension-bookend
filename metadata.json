@@ -1,0 +1,9 @@
+{
+  "uuid": "bookend@phlarose.github.io",
+  "name": "Bookend",
+  "description": "System readings on both sides of the top bar clock: processor usage and temperature, memory, swap, load and network speed, laid out symmetrically. Click a side to open System Monitor.",
+  "shell-version": ["46"],
+  "settings-schema": "org.gnome.shell.extensions.bookend",
+  "url": "https://github.com/phlarose/gnome-shell-extension-bookend",
+  "version-name": "1.0"
+}

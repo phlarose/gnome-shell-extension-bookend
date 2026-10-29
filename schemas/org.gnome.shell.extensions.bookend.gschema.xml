@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.bookend" path="/org/gnome/shell/extensions/bookend/">
+    <key name="left-sensors" type="as">
+      <default>['temp', 'cpu']</default>
+      <summary>Sensors left of the clock</summary>
+      <description>Sensor keys shown left of the clock, in left-to-right order.</description>
+    </key>
+    <key name="right-sensors" type="as">
+      <default>['memory', 'swap']</default>
+      <summary>Sensors right of the clock</summary>
+      <description>Sensor keys shown right of the clock, in left-to-right order.</description>
+    </key>
+    <key name="update-interval" type="i">
+      <range min="1" max="60"/>
+      <default>2</default>
+      <summary>Update interval</summary>
+      <description>Seconds between sensor readings.</description>
+    </key>
+    <key name="show-icons" type="b">
+      <default>true</default>
+      <summary>Show icons</summary>
+      <description>Show an icon before each reading.</description>
+    </key>
+  </schema>
+</schemalist>

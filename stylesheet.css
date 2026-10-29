@@ -1,0 +1,33 @@
+.bookend-box {
+  spacing: 12px;
+}
+
+.bookend-item {
+  spacing: 4px;
+}
+
+.bookend-icon {
+  icon-size: 14px;
+}
+
+/* Tabular digits and fixed widths keep the bar from shifting as values change. */
+.bookend-value {
+  font-feature-settings: "tnum";
+  text-align: left;
+}
+
+.bookend-cpu,
+.bookend-memory,
+.bookend-load {
+  min-width: 2.4em;
+}
+
+.bookend-temp,
+.bookend-swap {
+  min-width: 2.8em;
+}
+
+.bookend-net-down,
+.bookend-net-up {
+  min-width: 4.4em;
+}
