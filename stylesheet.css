@@ -16,10 +16,11 @@
   icon-size: 16px;
 }
 
-/* Tabular digits and fixed widths keep the bar from shifting as values change. */
+/* Tabular digits and fixed-width slots keep the bar from shifting as values
+   change; each reading sits on the clock side of its slot. With icons, a slot
+   also holds the 16px icon and 6px spacing, about 1.5em at the panel font. */
 .bookend-value {
   font-feature-settings: "tnum";
-  text-align: left;
 }
 
 .bookend-cpu,
@@ -36,4 +37,20 @@
 .bookend-net-down,
 .bookend-net-up {
   min-width: 4.4em;
+}
+
+.bookend-with-icons .bookend-cpu,
+.bookend-with-icons .bookend-memory,
+.bookend-with-icons .bookend-load {
+  min-width: 3.9em;
+}
+
+.bookend-with-icons .bookend-temp,
+.bookend-with-icons .bookend-swap {
+  min-width: 4.3em;
+}
+
+.bookend-with-icons .bookend-net-down,
+.bookend-with-icons .bookend-net-up {
+  min-width: 5.9em;
 }

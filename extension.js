@@ -89,16 +89,22 @@ export default class BookendExtension extends Extension {
         this._labels.clear();
 
         const showIcons = this._settings.get_boolean('show-icons');
-        this._sides = ['left-sensors', 'right-sensors'].map(settingsKey =>
-            this._buildSide(this._settings.get_strv(settingsKey), showIcons));
+        // Readings lean toward the clock so both sides sit the same distance from it.
+        this._sides = [
+            ['left-sensors', Clutter.ActorAlign.END],
+            ['right-sensors', Clutter.ActorAlign.START],
+        ].map(([settingsKey, align]) =>
+            this._buildSide(this._settings.get_strv(settingsKey), showIcons, align));
         this._place();
         this._update();
     }
 
-    _buildSide(keys, showIcons) {
-        const box = new St.BoxLayout({style_class: 'bookend-box'});
+    _buildSide(keys, showIcons, align) {
+        const box = new St.BoxLayout({
+            style_class: showIcons ? 'bookend-box bookend-with-icons' : 'bookend-box',
+        });
         for (const key of keys) {
-            const item = new St.BoxLayout({style_class: 'bookend-item'});
+            const item = new St.BoxLayout({style_class: 'bookend-item', x_align: align});
             if (showIcons) {
                 item.add_child(new St.Icon({
                     gicon: Gio.icon_new_for_string(`${this.path}/icons/${key}-symbolic.svg`),
@@ -108,11 +114,11 @@ export default class BookendExtension extends Extension {
             }
             const label = new St.Label({
                 text: '–',
-                style_class: `bookend-value bookend-${key}`,
+                style_class: 'bookend-value',
                 y_align: Clutter.ActorAlign.CENTER,
             });
             item.add_child(label);
-            box.add_child(item);
+            box.add_child(new St.Bin({style_class: `bookend-slot bookend-${key}`, child: item}));
             this._labels.set(key, label);
         }
 
