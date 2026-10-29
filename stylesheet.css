@@ -1,13 +1,19 @@
+/* Panel menu buttons get this padding from the theme's -natural-hpadding;
+   a plain St.Button does not, so the hover highlight would hug the readings. */
+.bookend-side {
+  padding: 0 12px;
+}
+
 .bookend-box {
   spacing: 12px;
 }
 
 .bookend-item {
-  spacing: 4px;
+  spacing: 6px;
 }
 
 .bookend-icon {
-  icon-size: 14px;
+  icon-size: 16px;
 }
 
 /* Tabular digits and fixed widths keep the bar from shifting as values change. */

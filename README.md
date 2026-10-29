@@ -46,4 +46,6 @@ gsettings --schemadir ~/.local/share/gnome-shell/extensions/bookend@phlarose.git
 
 ## License
 
-MIT
+GPL-2.0-or-later. See [LICENSE](LICENSE).
+
+The icons come from [Vitals](https://github.com/corecoding/Vitals) (GPL-2.0), renamed: the processor and temperature icons were designed for Vitals by [daudix](https://github.com/daudix); the memory, swap, system (used for load) and network icons are from GNOME's [Icon Development Kit](https://gitlab.gnome.org/Teams/Design/icon-development-kit).
